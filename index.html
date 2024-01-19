@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ACTIVITY 2 </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <h1> JavaScript colorChange() Hands-On </h1>
+
+
+    <div id="container">
+
+        <div id="infinity"> </div>
+        <input type="button" id="button" value="Click Me">
+
+    </div>
+
+
+    <script>
+        let swish = false;
+
+        document.getElementById('button').addEventListener('click', function() {
+            let divElement = document.getElementById('infinity');
+            
+            if (swish) {
+                let styleElem = document.head.appendChild(document.createElement("style"));
+                styleElem.innerHTML = `#infinity:after {border: 20px solid green;}
+                                       #infinity:before {border: 20px solid green;}`;
+
+            } else {
+                let styleElem = document.head.appendChild(document.createElement("style"));
+                styleElem.innerHTML = `#infinity:after {border: 20px solid blue;}
+                                       #infinity:before {border: 20px solid blue;}`;                
+            }
+
+            swish = !swish;
+        })
+    </script>
+    
+</body>
+</html>
